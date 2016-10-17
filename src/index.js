@@ -5,7 +5,9 @@ module.exports = function cstring (length: number, encoding = 'utf8') {
   let bufferCodec = vs.Buffer(length)
 
   function encode (value: string, buffer: ?Buffer, offset: ?number): Buffer {
-    let buf = Buffer.alloc(length)
+    const buf = Buffer.alloc(length)
+    // we need last byte for '\0'
+    if (value.length > length - 1) throw new Error(`varstruct-cstring: '${value}' length of ${value.length} is greater than the buffer length - 1 of ${length - 1}.`)
     buf.write(value, encoding)
     return bufferCodec.encode(buf, buffer, offset)
   }

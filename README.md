@@ -19,6 +19,27 @@ Install
 Example
 -------
 
+```js
+const vstruct = require('varstruct')
+const cstring = require('varstruct-cstring')
+
+const strings = vstruct([
+  { name: 'first', type: cstring(16) },
+  { name: 'last', type: cstring(16) }
+])
+
+const data = {
+  first: 'Satoshi',
+  last: 'Nakamoto'
+}
+
+const buffer = strings.encode(data)
+console.log(buffer.toString('hex')) // => '5361746f7368690000000000000000004e616b616d6f746f0000000000000000'
+
+const decodedData = strings.decode(buffer)
+console.dir(decodedData) // => { first: 'Satoshi', last: 'Nakamoto' }
+```
+
 
 License
 -------
