@@ -2,7 +2,7 @@
 const vs = require('varstruct')
 
 module.exports = function cstring (length: number, encoding = 'utf8') {
-  let bufferCodec = vs.Buffer(length)
+  const bufferCodec = vs.Buffer(length)
 
   function encode (value: string, buffer: ?Buffer, offset: ?number): Buffer {
     const buf = Buffer.alloc(length)
@@ -13,10 +13,10 @@ module.exports = function cstring (length: number, encoding = 'utf8') {
   }
 
   function decode (buffer: Buffer, offset, end): string {
-    let buf = bufferCodec.decode(buffer, offset, end)
-    let i = 0
-    for (; i < buf.length; i++) if (buf[i] === 0) break
-    return buf.slice(0, i).toString(encoding)
+    const buf = bufferCodec.decode(buffer, offset, end)
+    const i = buf.indexOf(0)
+    const sbuf = i === -1 ? buf : buf.slice(0, i)
+    return sbuf.toString(encoding)
   }
 
   const encodingLength = () => length
