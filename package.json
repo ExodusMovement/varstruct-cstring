@@ -7,18 +7,13 @@
     "url": "https://github.com/exodusmovement/varstruct-cstring/issues"
   },
   "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-syntax-flow": "^6.8.0",
-    "babel-plugin-transform-flow-strip-types": "^6.8.0",
-    "babel-plugin-typecheck": "^3.9.0",
-    "babel-preset-node6": "^11.0.0",
-    "babel-preset-stage-3": "^6.17.0",
-    "babel-register": "^6.16.3",
-    "standard": "^14.3.0",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.6.2",
-    "varstruct": "^5.2.1"
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.6",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-flow": "^7.18.6",
+    "standard": "^17.0.0",
+    "tape": "^5.6.1",
+    "varstruct": "^6.1.3"
   },
   "engines": {
     "node": ">= 6.0.0"
@@ -46,15 +41,16 @@
     "url": "git+https://github.com/exodusmovement/secure-container.git"
   },
   "scripts": {
-    "build": "babel --ignore=__tests__ src --out-dir lib",
+    "build": "babel src --out-dir lib",
     "lint": "standard",
-    "prepublish": "npm test",
-    "posttest": "NODE_ENV=production npm run build",
+    "prepare": "npm test",
     "test": "npm run build && npm run lint && npm run unit",
-    "unit": "find ./tests -name *.test.js -exec tape -r babel-register {} \\; | tap-spec"
+    "unit": "tape tests/*"
   },
   "standard": {
-    "ignore": "lib/",
-    "parser": "babel-eslint"
+    "ignore": [
+      "lib/"
+    ],
+    "parser": "@babel/eslint-parser"
   }
 }
