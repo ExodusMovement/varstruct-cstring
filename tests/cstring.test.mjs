@@ -1,6 +1,6 @@
 import test from 'tape'
 import vstruct from 'varstruct'
-import cstring from '../'
+import cstring from '../lib/index.js'
 
 test('simple encode / decode', (t) => {
   t.plan(2)

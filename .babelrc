@@ -1,11 +1,5 @@
 {
   "presets": [
-    "node6",
-    "stage-3"
-  ],
-  "plugins": [
-    ["typecheck", { "disable": { "production": true } }],
-    "syntax-flow",
-    "transform-flow-strip-types"
+    "@babel/preset-flow"
   ]
 }
