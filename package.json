@@ -19,11 +19,9 @@
     "node": ">= 6.0.0"
   },
   "files": [
-    "lib/",
-    "src/"
+    "lib/"
   ],
   "homepage": "https://github.com/exodusmovement/varstruct-cstringr#readme",
-  "jsnext:main": "./src/index.js",
   "keywords": [
     "varstruct",
     "cstring",
