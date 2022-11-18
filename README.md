@@ -2,7 +2,7 @@ varstruct-cstring
 =================
 
 [![npm](https://img.shields.io/npm/v/varstruct-cstring.svg?style=flat-square)](https://www.npmjs.com/package/varstruct-cstring)
-[![Build Status](https://travis-ci.org/ExodusMovement/varstruct-cstring.svg?branch=master)](https://travis-ci.org/ExodusMovement/varstruct-cstring)
+[![Build Status](https://img.shields.io/github/workflow/status/ExodusMovement/varstruct-cstring/CI/master?style=flat-square)](https://github.com/ExodusMovement/varstruct-cstring/actions?query=branch%3Amaster)
 [![JavaScript standard style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
 
 Easily encode / decode strings as [C strings](https://en.wikibooks.org/wiki/C_Programming/Strings), that is, null-terminated `\0`.
