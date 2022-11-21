@@ -1,7 +1,7 @@
 {
   "name": "varstruct-cstring",
   "description": "Encode / decode C strings.",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "author": "Exodus Movement, Inc.",
   "bugs": {
     "url": "https://github.com/exodusmovement/varstruct-cstring/issues"
